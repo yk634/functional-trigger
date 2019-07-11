@@ -1,0 +1,11 @@
+shared:
+    image: node:10
+jobs:
+    build_bar:
+        steps:
+            - print: echo Starting build_bar!
+        requires: [~sd@4410:deploy_foo, ~sd@3031:deploy_foo]
+    deploy_bar:
+        steps:
+            - print: echo Starting deploy_bar job!
+        requires: [build_bar]
