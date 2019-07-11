@@ -9,3 +9,6 @@ jobs:
         steps:
             - print: echo Starting deploy_foo job!
         requires: [build_foo]
+    deploy_foo_fail:
+        steps:
+            - fail: exit 1;
