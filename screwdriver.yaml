@@ -9,3 +9,7 @@ jobs:
         steps:
             - print: echo Starting deploy_bar job!
         requires: [build_bar]
+    build_bar_fail:
+        steps:
+            - echo: echo Should not get to this step!
+        requires: [~sd@4410:deploy_foo_fail, ~sd@3031:deploy_foo_fail]
