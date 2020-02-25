@@ -1,15 +1,19 @@
 shared:
     image: node:10
 jobs:
-    build_bar:
+    success_B:
         steps:
-            - print: echo Starting build_bar!
-        requires: [~sd@4410:deploy_foo, ~sd@3031:deploy_foo]
-    deploy_bar:
+            - print: echo "Starting success_B"
+        requires: [~sd@4410:success_A, ~sd@3031:success_A]
+    fail_B:
         steps:
-            - print: echo Starting deploy_bar job!
-        requires: [build_bar]
-    build_bar_fail:
+            - echo: echo Should not get to this step
+        requires: [~sd@4410:fail_A, ~sd@3031:fail_A]
+    parallel_B1:
         steps:
-            - echo: echo Should not get to this step!
-        requires: [~sd@4410:deploy_foo_fail, ~sd@3031:deploy_foo_fail]
+            - print: echo "Starting parallel_B1"
+        requires: [~sd@4410:parallel_A, ~sd@3031:parallel_A]
+    parallel_B2:
+        steps:
+            - print: echo "Starting parallel_B2"
+        requires: [~sd@4410:parallel_A, ~sd@3031:parallel_A]
