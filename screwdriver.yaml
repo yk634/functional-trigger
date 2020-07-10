@@ -1,0 +1,7 @@
+shared:
+    image: node:8
+jobs:
+    external:
+        steps:
+            - echo: echo test
+        requires: [~sd@:simple]
