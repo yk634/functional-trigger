@@ -1,0 +1,15 @@
+shared:
+   image: node:8
+jobs:
+    simple:
+        steps:
+            - echo: echo test
+        requires: [~commit]
+    parallel:
+        steps:
+            - echo: echo test
+        requires: [simple]
+    join:
+        steps:
+            - echo: echo test
+        requires: [parallel, sd@:external]
