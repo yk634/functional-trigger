@@ -1,0 +1,7 @@
+shared:
+    image: node:8
+jobs:
+    trigger:
+        steps:
+            - echo: echo test
+        requires: [ ~commit ]
