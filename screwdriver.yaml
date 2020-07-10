@@ -1,0 +1,19 @@
+shared:
+    image: node:8
+jobs:
+    main:
+        steps:
+            - echo: echo test
+        requires: [ ~sd@:trigger ]
+    parallel1:
+        steps:
+            - echo: echo test
+        requires: [ main ]
+    parallel2:
+        steps:
+            - echo: echo test
+        requires: [ main ]
+    join:
+        steps:
+            - echo: echo test
+        requires: [parallel1, parallel2]
