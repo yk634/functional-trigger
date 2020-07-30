@@ -4,7 +4,7 @@ jobs:
     main:
         steps:
             - echo: echo test
-        requires: [ ~sd@5196:trigger ]
+        requires: [ ~sd@5399:trigger ]
     parallel1:
         steps:
             - echo: echo test
