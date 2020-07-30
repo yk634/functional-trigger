@@ -4,4 +4,4 @@ jobs:
     external:
         steps:
             - echo: echo test
-        requires: [~sd@5194:simple]
+        requires: [~sd@5397:simple]
