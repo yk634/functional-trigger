@@ -1,19 +1,7 @@
 shared:
-    image: node:8
+    image: nodeeeeeeee:8
 jobs:
     main:
         steps:
             - echo: echo test
         requires: [ ~commit ]
-    parallel1:
-        steps:
-            - echo: echo test
-        requires: [ main ]
-    parallel2:
-        steps:
-            - echo: echo test
-        requires: [ main ]
-    join:
-        steps:
-            - echo: echo test
-        requires: [parallel1, parallel2]
