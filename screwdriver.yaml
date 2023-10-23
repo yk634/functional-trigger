@@ -12,4 +12,4 @@ jobs:
     join:
         steps:
             - echo: echo test
-        requires: [parallel, sd@7020:external]
+        requires: [parallel, sd@14834:external]
