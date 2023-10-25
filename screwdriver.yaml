@@ -3,5 +3,5 @@ shared:
 jobs:
     external:
         steps:
-            - echo: echo test
+            - echo: sleep 10
         requires: [~sd@12362:simple]
